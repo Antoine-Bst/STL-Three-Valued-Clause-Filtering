@@ -244,7 +244,7 @@ This program is distributed under the terms of the **GNU LGPL**. See the file `C
 
 Antoine Besset, Joris Tillet, and Julien Alexandre dit Sandretto — ENSTA Paris, Institut Polytechnique de Paris.
 
-This work was done at MIT in the REALM team, an exchange supported by U2IS lab ENSTA Paris - Institut Carnot TSN. 
+This work was done at MIT in the REALM team, a visit supported by U2IS lab ENSTA Paris - Institut Carnot TSN. 
 This research benefited from the support of the STARTS Projects — CIEDS — Institut Polytechnique.
 
 ## 11. References
