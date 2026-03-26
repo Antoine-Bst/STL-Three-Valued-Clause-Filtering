@@ -1,6 +1,6 @@
 # CDC-2026-ClauseFiltering
 Code companion for submission to the 2026 IEEE Conference on Decision and Control. 
-Here is proposed the Clause filtering mechanism as it is the major contribution wich can be used for a variety of problem such as: computing constraints for control correction, computing guarranteed Safe set (IJAR paper => see other repo) and locally invariant set of parameter problem . It allows to **completely** break the combinatorial problem identified in ProbstarTL paper (2025) by proposing a safe set arround the average trajectory.
+Here is proposed the Clause filtering mechanism as it is the major contribution wich can be used for a variety of problem such as: computing constraints for control correction, computing maximal guarranteed safe set (IJAR paper => see other repo) and locally invariant set of parameter problem . It allows to **completely** break the combinatorial problem identified in ProbstarTL paper (2025) by proposing a safe set arround the average trajectory.
 
 # Minimum-Effort Control Correction for Guaranteed Satisfaction of Signal Temporal Logic under Uncertainty — Clause Filtering Implementation
 
