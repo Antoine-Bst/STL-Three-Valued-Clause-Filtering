@@ -242,10 +242,12 @@ This program is distributed under the terms of the **GNU LGPL**. See the file `C
 
 ## 10. Authors
 
-Antoine Besset, Joris Tillet, and Julien Alexandre dit Sandretto — ENSTA Paris, Institut Polytechnique de Paris.
+Antoine Besset — ENSTA Paris, Institut Polytechnique de Paris.
 
 This work was done at MIT in the REALM team, a visit supported by U2IS lab ENSTA Paris - Institut Carnot TSN. 
 This research benefited from the support of the STARTS Projects — CIEDS — Institut Polytechnique.
+
+PhD supervisors: Joris Tillet, and Julien Alexandre dit Sandretto.
 
 ## 11. References
 
