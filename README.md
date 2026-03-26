@@ -1,5 +1,6 @@
 # CDC-2026-ClauseFiltering
-Code companion for submission to the 2026 IEEE Conference on Decision and Control. Only the Clause filtering as it is the major contribution wich can be used to compute constraints for control correction and also usable for the IJAR paper completely breaking the combinatorial problem identified in ProbstarTL paper (2025) considering the average trajectory satisfies the formula.
+Code companion for submission to the 2026 IEEE Conference on Decision and Control. 
+Here we propose only the Clause filtering as it is the major contribution wich can be used to compute constraints for control correction and also being usable for the IJAR paper (see other repo). It allows to **completely** break the combinatorial problem identified in ProbstarTL paper (2025) considering the average trajectory satisfies the formula.
 
 # Minimum-Effort Control Correction for Guaranteed Satisfaction of Signal Temporal Logic under Uncertainty — Clause Filtering Implementation
 
