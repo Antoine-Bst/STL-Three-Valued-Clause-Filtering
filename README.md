@@ -4,7 +4,7 @@ Here is proposed the Clause filtering mechanism as it is the major contribution 
 
 # Clause Filtering Implementation
 
-This repository provides a prototype implementation of the **critical constraint identification** framework (Section III of the paper) for computing Disjunctive Normal Form (DNF) representations of guaranteed satisfaction conditions for Signal Temporal Logic (STL) formulas evaluated over reachable tubes.
+This repository provides a prototype implementation of the **critical constraint identification** framework for computing Disjunctive Normal Form (DNF) representations of guaranteed satisfaction conditions for Signal Temporal Logic (STL) formulas evaluated over reachable tubes.
 
 The tool identifies which subsets of uncertain reachable sets must be constrained to guarantee STL satisfaction, by tracking logical dependencies through marker-based propagation in continuous time. The resulting DNF is computed in sub-millisecond time and serves as the input to the control correction LP (Section IV). It has been tested on Linux Ubuntu only.
 
