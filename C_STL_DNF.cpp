@@ -1,5 +1,5 @@
 /* ============================================================================
- * D Y N I B E X - STL formula verification on tube
+ * D Y N I B E X - STL Formula Logical propagation
  * ============================================================================
  * Copyright   : ENSTA
  * License     : This program can be distributed under the terms of the GNU LGPL.
