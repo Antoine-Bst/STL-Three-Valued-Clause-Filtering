@@ -1,7 +1,8 @@
 # CDC-2026-ClauseFiltering
 Code companion for submission to the 2026 IEEE Conference on Decision and Control.
-
-Here is proposed the Clause filtering mechanism as it is the major contribution wich can be used for a variety of problem such as: computing constraints for control correction, locally invariant set of parameter problem and computing maximal guarranteed safe set (IJAR paper under review => see other repo). It allows to reduce the combinatorial problem identified in H. Tran ProbstarTL HSCC '25 paper by proposing a safe set arround the average trajectory.
+This repository implements the proposed clause filtering mechanism, which constitutes the core contribution of the paper. It enables efficient identification of sufficient constraint sets and can be applied to a variety of problems, including:
+- control correction under STL specifications,
+- computation of locally invariant parameter sets/estimation of maximal guaranteed safe sets around an average trajectory (see related IJAR submission).
 
 # Clause Filtering Implementation
 
