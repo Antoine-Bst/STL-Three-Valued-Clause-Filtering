@@ -7,7 +7,7 @@
  *
  * Author(s)   : Antoine Besset, Joris Tillet and Julien Alexandre dit Sandretto
  * Created     : Jul 22, 2025
- * Modified    : Jul 22, 2025
+ * Modified    : March, 2026
  * Sponsored   : This research benefited from the support of the "STARTS Projects - CIEDS - Institut Polytechnique"
  * ---------------------------------------------------------------------------- */
 
