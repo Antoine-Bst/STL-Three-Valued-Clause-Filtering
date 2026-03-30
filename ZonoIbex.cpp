@@ -772,7 +772,7 @@ bool is_intersect(const Aff2Vec& aff_vec1, const Aff2Vec& aff_vec2){
   return is_include(merge_zono(aff_vec1, aff_vec2), coord);
 }
 
-//sous optimal aff1 inclu dans aff2 ?
+//sous optimal aff1 inclu dans aff2 ? -ça marche on touche pas
 bool is_subset(const Aff2Vec& aff_vec1, const Aff2Vec& aff_vec2){
   
   if (!is_intersect(aff_vec1,aff_vec2))
@@ -875,7 +875,7 @@ IntervalVector Pontryagin_diff(IntervalVector vec1, IntervalVector vec2){ //vec1
   return result;
 }
 
-
+//La FONCTION LA PLUS IMPORTANTE DANS LE TRACKING: QUI EST QUI
 int predicate_no(const int& marker, const int& init_marker){
   int result = marker - marker%init_marker;
   return result/init_marker;
@@ -885,7 +885,6 @@ int predicate_no(const int& marker, const int& init_marker){
 Aff2Vec gene_gain(const Aff2Vec& aff_vec,
                   const std::vector<std::pair<int, double>>& selection)
 {
-    // 1) On met la sélection dans une map pour accès O(1)
     std::unordered_map<int, double> gain_by_gen;
     gain_by_gen.reserve(selection.size());
     for (const auto& p : selection) {
@@ -893,7 +892,6 @@ Aff2Vec gene_gain(const Aff2Vec& aff_vec,
         gain_by_gen[p.first] = p.second;
     }
 
-    // 2) On construit le résultat
     Aff2Vec result;
     result.reserve(aff_vec.size());
 
@@ -931,6 +929,7 @@ ZonoTube tube_gene_gain(const ZonoTube& tube, const std::vector<std::pair<int, d
   return result;
 }
 
+/*
 Aff2Vec IntervalVector_to_Aff(ibex::IntervalVector itv_vec){ ///inutile puisque Interval2Aff le fait sans erreur memoire
 Aff2Vec result;
 
@@ -942,6 +941,7 @@ for (size_t i = 0; i < itv_vec.size(); i++)
 }
 return result;
 }
+*/
 
 //obligatoirement dans un ordre croissant et à la suite 1,2,3,4 ...
 std::vector<std::pair<int, double>> reduction_to_selection(std::vector<double> reduction_liste){
