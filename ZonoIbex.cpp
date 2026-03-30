@@ -815,7 +815,7 @@ double get_noise_val(std::vector<std::pair<int,double>> coeffs, const int& num){
   return 0;//si il n'existe pas alors c'est 0
 }
 
-std::vector<double> get_ub(IntervalVector temp){ //je veux juste dans un format vector double et pas Vector comme avec Ibex
+std::vector<double> get_ub(IntervalVector temp){ //je veux juste dans un format vector double et pas Vector comme avec Ibex (o_o)'
   std::vector<double> result;
   for (size_t i = 0; i < temp.size(); i++)
   {
