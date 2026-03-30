@@ -6,8 +6,8 @@
  *               See the file COPYING.LESSER.
  *
  * Author(s)   : Antoine Besset, Joris Tillet and Julien Alexandre dit Sandretto
- * Created     : March, 2025
- * Modified    : March, 2025
+ * Created     : March, 2026
+ * Modified    : March, 2026
  * Sponsored   : This research benefited from the support of the "STARTS Projects - CIEDS - Institut Polytechnique"
  * ---------------------------------------------------------------------------- */
 #ifndef CSTLDNF_H
