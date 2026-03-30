@@ -1,5 +1,5 @@
 /* ============================================================================
- * D Y N I B E X - QuickComputation of Zonotope from Dynibex
+ * D Y N I B E X - QuickComputation of and manipulation of Zonotope from Dynibex
  * ============================================================================
  * Copyright   : ENSTA
  * License     : This program can be distributed under the terms of the GNU LGPL.
@@ -31,7 +31,7 @@ void print_vertices_to_file(const ZonoTube& tube, const int& num_noise, const in
     std::ostringstream filename;
     //NEED TO MODIFY THE PATH
     filename << "/home/antoine-bc/Desktop/AutoParamSpace/AUTOGEN/simu_result/sim_zono" << n << ".txt";
-    const int dim = 2; //applati en 2d
+    const int dim = 2; //applati en 2d FOR 2D SYSTEM
 
     std::ofstream sim_zono(filename.str());
 
@@ -143,7 +143,7 @@ double normal_cdf(double x) {
 }
 
 /*
-double gaussian_pdf(double x, double mu, double sigma2) //modifier absolument y'a une erreur
+double gaussian_pdf(double x, double mu, double sigma2) //modifier absolument y'a une erreur - FAIT
 {
     const double sigma = std::sqrt(sigma2);
     const double coef = 1.0 / (sigma * std::sqrt(2.0 * M_PI));
@@ -176,7 +176,7 @@ double interval_prob(double a, double b, double mu, double sigma) {
 }
 
 bool areEqual(const std::vector<double>& v1, const std::vector<double>& v2) {
-    // Vérifie si les tailles sont différentes
+    // Vérifie si les tailles sont différentes -fait
     if (v1.size() != v2.size()) {
         return false;
     }
@@ -201,25 +201,23 @@ std::vector<std::vector<double>> computeConvexHullVertices(const std::vector<std
     int dim = point_cloud[0].size();
     int numPoints = point_cloud.size();
 
-    // Vérification
+    // Vérifs des dimensions
     for (const auto& p : point_cloud) {
         if ((int)p.size() != dim) {
             throw std::runtime_error("Tous les points doivent avoir la même dimension !");
         }
     }
 
-    // Aplatir le tableau pour Qhull
+    // Aplatir le tableau pour Qhull Obligatoire!
     std::vector<double> flatPoints;
     flatPoints.reserve(numPoints * dim);
     for (const auto& p : point_cloud) {
         flatPoints.insert(flatPoints.end(), p.begin(), p.end());
     }
 
-    // Exécuter Qhull
     Qhull qh;
     qh.runQhull("convex_hull", dim, numPoints, flatPoints.data(), "Qt");
 
-    // Extraire les sommets
     std::vector<std::vector<double>> hullVertices;
     for (auto v = qh.vertexList().begin(); v != qh.vertexList().end(); ++v) {
         const double* coords = v->point().coordinates();
@@ -310,7 +308,7 @@ std::vector<std::vector<int>> generate_sign_combinations(int N) {
     return combos;
 }
 
-//fonction d'addition de vecteur
+//fonction d'addition de vecteur, oui je me fais chier à le recoder, oui il y'a des librairies qui le font.
 std::vector<double> add_vector(const std::vector<double>& v1, const std::vector<double>& v2){
   
     std::vector<double> result;
@@ -328,7 +326,7 @@ std::vector<double> add_vector(const std::vector<double>& v1, const std::vector<
     return result;
 }
 
-//fonction de multiplication de vecteur
+//fonction de multiplication de vecteur, pareil que en haut
 std::vector<double> gain_vector(const std::vector<double>& v1, const int& K){
   
     std::vector<double> result;
@@ -339,7 +337,7 @@ std::vector<double> gain_vector(const std::vector<double>& v1, const int& K){
     return result;
 }
 
-//fonction de multiplication de vecteur mais en double
+//fonction de multiplication de vecteur mais en double, pareil que en haut, tu vas voir plein de fonction comme ça ahah
 std::vector<double> gain_vector_double(const std::vector<double>& v1, const double& K){
   
     std::vector<double> result;
@@ -363,6 +361,7 @@ double dot_vector(const std::vector<double>& a, const std::vector<double>& b) {
     return result;
 }
 
+//un dernier pour la route
 std::vector<double> element_product(const std::vector<double>& a, const std::vector<double>& b)
 {
   
@@ -376,6 +375,7 @@ std::vector<double> element_product(const std::vector<double>& a, const std::vec
     }
     return result;
 }
+
 // transforme une vecteur d'Affine de dynibex fAFFullI dans un vecteur de mon format
 Aff2Vec DyniAff2Vec(const Affine2Vector& aff_vec){
 
@@ -393,7 +393,7 @@ Aff2Vec DyniAff2Vec(const Affine2Vector& aff_vec){
 Aff2Vec Interval2Aff(const IntervalVector& itv_vec){
 
   //Aff2Vec result;
-  Affine2Vector temp(itv_vec, true);
+  Affine2Vector temp(itv_vec, true); //pourquoi ne pas utiliser les méthodes déja existante!
   //for (size_t i = 0; i < itv_vec.size(); i++)
   //{
   //  AffineDecomp temp;
@@ -428,7 +428,7 @@ std::vector<double> get_center_aff2vec(const Aff2Vec& affine_vector){
   return result;
 }
 /*
-//on construit les générateurs à partir de la forme affine
+//on construit les générateurs à partir de la forme affine cette fonction est pourrie
 std::vector<std::vector<double>> build_generators(const Aff2Vec& aff_vec) {
     const int dim_vec = aff_vec.size();
     std::vector<std::vector<double>> generators;
@@ -582,6 +582,10 @@ double dist_hull(const Aff2Vec& aff_vec, const std::vector<double>& dir){
   if (normal != 0) //on va eviter les divisions par 0...
   {
     direct = gain_vector_double(dir, 1/normal); //on normalise la direction
+  }
+  else
+  {
+    std::cout<<"Err: Null vector"<<endl; //au moins on sait que y'a un problème
   }
 
   std::vector<std::vector<double>> generators = build_generators(aff_vec);
