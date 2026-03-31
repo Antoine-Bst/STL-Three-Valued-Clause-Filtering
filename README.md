@@ -10,7 +10,8 @@ This repository provides a prototype implementation of the **critical constraint
 
 The tool identifies which subsets of uncertain reachable sets must be constrained to guarantee STL satisfaction, by tracking logical dependencies through marker-based propagation in continuous time. The resulting DNF is computed in sub-millisecond time. It has been tested on Linux Ubuntu only.
 
-A pruning extension is also proposed.
+Inspired from Fuzzy Logic, a pruning extension using set-membership scoring functions is also proposed.
+https://en.wikipedia.org/wiki/Membership_function_(mathematics)
 
 ---
 
