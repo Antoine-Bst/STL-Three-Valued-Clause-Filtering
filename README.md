@@ -4,6 +4,7 @@ This repository implements the proposed clause filtering mechanism, which consti
 - control correction under STL specifications,
 - computation of locally invariant parameter sets/estimation of maximal guaranteed safe sets around an average trajectory (see related IJAR submission).
 
+Note: Each sufficient constraint set is logically minimal but not geometrically minimal as it may contain geometrically redundant LP constraints.
 # Clause Filtering Implementation
 
 This repository provides a prototype implementation of the **critical constraint identification** framework for computing Disjunctive Normal Form (DNF) representations of guaranteed satisfaction conditions for Signal Temporal Logic (STL) formulas evaluated over reachable tubes.
